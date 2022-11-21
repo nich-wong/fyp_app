@@ -1,0 +1,8 @@
+
+/* If the browser window is 600px or smaller */
+@media only screen and (max-width: 420px) {
+    .screen-sm{
+        position: fixed;
+        bottom: 0;
+    }
+}

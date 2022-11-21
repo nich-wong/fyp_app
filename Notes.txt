@@ -1,0 +1,63 @@
+Laravel Framework 9.17.0, Bootstrap 5.1.3
+Check package.json for dependencies' versions   
+
+---------------------------------------------------------------
+php artisan serve
+dd($request->all());
+
+php artisan make:migration create_orders_table (create migration)
+php artisan make:controller ManageController --resource --model=Orderline (create controller, with resource and model)
+php artisan make:model Category -m (create model and migration)
+
+php artisan migrate
+php artisan migrate:status
+php artisan migrate:refresh --step=2
+php artisan migrate:rollback --step=2 (rollback latest how many migrations)
+
+php artisan route:list (view all routes)
+
+php artisan make:livewire order-create
+<livewire:counter :order="$order"/>
+
+<!-- loop collection for specific users -->
+@if(isset(Auth::user()->id) && Auth::user()->id == $category->rest_id) 
+
+<!-- show if user logins -->
+@if(Auth::user()) 
+
+-----------------------------------------------------------
+TO DO:
+- add password to edit menu
+
+Non-Urgent:
+- If current orders empty, display message no orders at the moment
+- check auth for each view
+- Enter table no in order
+
+------------------------------------------------------------
+Bill Table 
+    - bill_id, price_total, order_id(FK)
+
+------------------------------------------------------------
+OrderController
+GET|HEAD order .................... order.index › OrderController@index     //1. view menu - can set item qty here
+POST order .................... order.store › OrderController@store         //3. after add will store (backend), and go back to view menu
+GET|HEAD order/create ........... order.create › OrderController@create     //2. add item to order (frontend) 
+GET|HEAD order/{order} ............... order.show › OrderController@show    //6. show bill
+PUT|PATCH order/{order} ........... order.update › OrderController@update  //5. update order (backend) and then show
+DELETE order/{order} ......... order.destroy › OrderController@destroy  
+GET|HEAD order/{order}/edit .......... order.edit › OrderController@edit   //4. press checkout cart to show/make changes to order, click confirm (frontend)
+
+
+GET|HEAD        order/{order}/bill ..................... order.bill.index › OrderController@index  
+POST            order/{order}/bill ..................... order.bill.store › OrderController@store  
+GET|HEAD        order/{order}/bill/create .............. order.bill.create › OrderController@create  
+GET|HEAD        order/{order}/bill/{bill} .............. order.bill.show › OrderController@show  
+PUT|PATCH       order/{order}/bill/{bill} .............. order.bill.update › OrderController@update  
+DELETE          order/{order}/bill/{bill} .............. order.bill.destroy › OrderController@destroy  
+GET|HEAD        order/{order}/bill/{bill}/edit ......... order.bill.edit › OrderController@edit
+
+make:auth doesnt work so use this:
+1. composer require laravel/ui
+2. php artisan ui vue --auth
+3. npm install && npm run dev
