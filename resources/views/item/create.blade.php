@@ -10,7 +10,8 @@ Add New Items
 
 @section('mainContent')
 	<div class="div py-2">
-		<a class="btn btn-primary btn-sm" href="{{url()->previous()}}">Back</a>
+		{{-- <a class="btn btn-primary btn-sm" href="{{url()->previous()}}">Back</a> --}}
+		<a class="btn btn-primary btn-sm" href="/item">Back</a>
 	</div>
 
 	<form class="form-horizontal" method="post" action="/item" enctype="multipart/form-data">

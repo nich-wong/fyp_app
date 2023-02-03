@@ -8,6 +8,10 @@ dd($request->all());
 php artisan make:migration create_orders_table (create migration)
 php artisan make:controller ManageController --resource --model=Orderline (create controller, with resource and model)
 php artisan make:model Category -m (create model and migration)
+php artisan make:controller AvailController --resource
+
+
+php artisan make:controller SalesController --resource --model=Order
 
 php artisan migrate
 php artisan migrate:status
@@ -26,17 +30,7 @@ php artisan make:livewire order-create
 @if(Auth::user()) 
 
 -----------------------------------------------------------
-TO DO:
-- add password to edit menu
 
-Non-Urgent:
-- If current orders empty, display message no orders at the moment
-- check auth for each view
-- Enter table no in order
-
-------------------------------------------------------------
-Bill Table 
-    - bill_id, price_total, order_id(FK)
 
 ------------------------------------------------------------
 OrderController

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('item_name');
             $table->float('item_price', 5, 2);
             $table->string('item_image')->nullable();
+            $table->string('avail')->nullable();
             $table->unsignedBigInteger('cat_id')->nullable();
             $table->foreign('cat_id')->references('cat_id')->on('categories')->onUpdate('cascade')->nullOnDelete();
             $table->timestamps();

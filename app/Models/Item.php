@@ -10,7 +10,7 @@ class Item extends Model
     use HasFactory;
 
     protected $fillable = [
-        'item_name', 'item_price', 'item_image', 'cat_id', 
+        'item_name', 'item_price', 'item_image', 'cat_id', 'avail',
     ];
 
     protected $primaryKey = 'item_id';

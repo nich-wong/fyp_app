@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('browserTitle')
-Manage Orders
+View Orders
 @endsection
 
 @section('title')
-Manage Current Orders
+View Current Orders
 @endsection
 
 
@@ -18,8 +18,14 @@ Manage Current Orders
 
     <!-- if user logins -->
     @if(Auth::user()) 
+
+        <div class="row mx-0 py-2 px-0 fw-semibold border-bottom border-3">
+            <div class="col-2 h5   text-center">No</div>
+            <div class="col-5 h5  text-start">Status</div>
+            <div class="col-5 h5   text-start">Payment</div>
+        </div>
         
-        <livewire:refresh-orders />
+        <livewire:kitchen-refresh />
 
     @endif
 

@@ -6,6 +6,7 @@ use App\Models\Item;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Validation\Rule;
 
 class ItemController extends Controller
 {
@@ -43,7 +44,7 @@ class ItemController extends Controller
         $item = new Item;
 
         $validatedData = request()->validate([
-            'name' => 'required',
+            'name' => 'required|unique:items,item_name',
             'price' => 'required|numeric|between:0,999.99',
             'image' => 'nullable|mimes:jpg, png, jpeg'
         ]);
@@ -110,7 +111,7 @@ class ItemController extends Controller
             'image' => 'nullable|mimes:jpg, png, jpeg'
         ]);
         
-
+        $item->avail = request('avail');
         $item->item_name = $validatedData['name'];
         $item->item_price = $validatedData['price'];
         $item->cat_id = request('category');
@@ -153,9 +154,10 @@ class ItemController extends Controller
             $item->item_image = null;
         }
 
-
+        
         $item->save();
 
+        
         return redirect('item');
     }
 

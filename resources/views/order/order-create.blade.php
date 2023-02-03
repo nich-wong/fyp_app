@@ -83,7 +83,7 @@ Menu
                         <div class="row justify-content-start align-items-center mx-0">
                             @foreach($items as $item)
                             @isset($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id && $item->avail != "false")
                             <div class="col-6 px-0 " style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light ">
                                     
@@ -110,7 +110,7 @@ Menu
                         <div class="row justify-content-start align-items-center mx-0">
                             @foreach($items as $item)
                             @empty($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id  && $item->avail != "false")
                             <div class="col-6 px-0" style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light">
                 
@@ -141,7 +141,7 @@ Menu
                         <div class="row justify-content-start align-items-center mx-0">
                             @foreach($items as $item)
                             @isset($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id  && $item->avail != "false")
                             <div class="col-6 px-0" style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light">
                                     
@@ -166,7 +166,7 @@ Menu
                         <div class="row justify-content-start align-items-center mx-0">
                             @foreach($items as $item)
                             @empty($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id  && $item->avail != "false")
                             <div class="col-6 px-0" style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light">
                 

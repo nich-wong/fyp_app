@@ -24,8 +24,8 @@ Order Bill
         <div class="col-8">{{$order->order_id}}</div>
         <div class="col-4">Order Time:</div>
         <div class="col-8">{{$order->date_time}}</div>
-        <div class="col-4">Table No:</div>
-        <div class="col-8">{{$order->table_no}}</div>
+        {{-- <div class="col-4">Table No:</div>
+        <div class="col-8">{{$order->table_no}}</div> --}}
     </div>
 
     <livewire:bill-status :order="$order"/>

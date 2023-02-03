@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -39,7 +40,7 @@ class CategoryController extends Controller
         $category = new Category;
 
         $validatedData = request()->validate([
-            'cat_name' => 'required'
+            'cat_name' => 'required',
         ]);
         
         $category->cat_name = $validatedData['cat_name'];
@@ -83,7 +84,13 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $validatedData = request()->validate([
-            'cat_name' => 'required',
+            // 'cat_name' => 'required',
+            'cat_name' => [
+                'required',
+                Rule::unique('categories', 'cat_name')->where(function ($query) use ($category) {
+                    return $query->where('rest_id', $category->rest_id);
+                }),
+            ],
         ]);
         
 

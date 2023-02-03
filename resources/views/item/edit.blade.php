@@ -11,7 +11,9 @@ Edit Item
 
 @section('mainContent')
 	<div class="div py-2">
-		<a class="btn btn-primary btn-sm" href="{{url()->previous()}}">Back</a>
+		{{-- <a class="btn btn-primary btn-sm" href="{{url()->previous()}}">Back</a> --}}
+		<a class="btn btn-primary btn-sm" href="/item">Back</a>
+		
 	</div>
 
 	<form class="form-horizontal" method="post" action="/item/{{$item->item_id}}" enctype="multipart/form-data">
@@ -53,6 +55,35 @@ Edit Item
 
 					  </select>
 				</div>
+			</div>
+
+			<!-- Availability -->
+			<div class="form-group py-2">
+				<p class="mb-0 py-2 ">Item Availability</p>
+				@if($item->avail == null || $item->avail == "true")
+				<input class="form-check-input" type="radio" value="true" id="avail" name="avail" checked>
+				<label class="form-check-label" for="avail">
+					Available
+				</label>
+
+				<input class="form-check-input" type="radio" value="false" id="avail" name="avail">
+				<label class="form-check-label" for="avail">
+					Not Available
+				</label>
+				@endif
+
+				@if($item->avail == "false")
+				<input class="form-check-input" type="radio"  value="true" id="avail" name="avail">
+				<label class="form-check-label" for="avail">
+					Available
+				</label>
+
+				<input class="form-check-input" type="radio"  value="false" id="avail" name="avail" checked>
+				<label class="form-check-label" for="avail">
+					Not Available
+				</label>
+				@endif
+		
 			</div>
 
 			<!-- Item Image-->

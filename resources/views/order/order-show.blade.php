@@ -78,7 +78,7 @@ Menu
                             @foreach($items as $item)
                                 <?php  $qtyExist = 0; ?>
                             @isset($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id && $item->avail != "false")
                             <div class="col-6 px-0 " style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light ">
                                     
@@ -119,7 +119,7 @@ Menu
                             @foreach($items as $item)
                                 <?php  $qtyExist = 0; ?>
                             @empty($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id && $item->avail != "false")
                             <div class="col-6 px-0" style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light">
                 
@@ -164,7 +164,7 @@ Menu
                             @foreach($items as $item)
                                 <?php  $qtyExist = 0; ?>    
                             @isset($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id && $item->avail != "false")
                             <div class="col-6 px-0" style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light">
                                     
@@ -203,7 +203,7 @@ Menu
                             @foreach($items as $item)
                                 <?php  $qtyExist = 0; ?>
                             @empty($item->item_image)
-                            @if($item->cat_id == $cat->cat_id)
+                            @if($item->cat_id == $cat->cat_id && $item->avail != "false")
                             <div class="col-6 px-0" style="border: 1px solid black">
                                 <div class="card text-center rounded-0 bg-light">
                 

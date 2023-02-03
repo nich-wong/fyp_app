@@ -3,15 +3,31 @@
 
     @switch($order_status)
     @case("pending")
-        <div class="col-12 h5 my-0 text-danger">PENDING</div>
+        <div class="col-12 h5 my-0 text-danger">
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            PENDING
+        </div>
         @break
     
     @case("preparing")
-        <div class="col-12 h5 my-0 text-warning">PREPARING</div>
+        <div class="col-12 h5 my-0 text-warning">
+            <div class="spinner-border spinner-border-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            PREPARING
+        </div>
+        
         @break
  
     @case("ready")
-        <div class="col-12 h5 my-0 text-success">READY</div>    
+        <div class="col-12 h5 my-0 text-success">
+            <div class="spinner-grow spinner-grow-sm" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            READY
+        </div>    
         @break
 
     @case("served")

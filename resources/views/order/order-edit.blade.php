@@ -36,7 +36,7 @@ Order Details
             <div class="col-8 p">{{$order->date_time}}</div>
         </div> --}}
        
-        <div class="row">
+        {{-- <div class="row">
 			<label class="col-6 control-label pe-0 align-self-center text-end" for="table">Enter Table No:</label>  
 			<div class="col-2 pe-0">
                 @if($order->table_no == null)
@@ -45,7 +45,7 @@ Order Details
                     <input id="table" name="table" type="number" value="{{$order->table_no}}" class="form-control text-center px-1">
                 @endif
 			</div>
-		</div>
+		</div> --}}
 
         <div class="row text-center justify-content-center py-2">
             <div class="col-9 h2 my-0 pt-2">Order Items</div>

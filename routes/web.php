@@ -27,5 +27,6 @@ Route::resource('category', 'App\Http\Controllers\CategoryController');
 Route::resource('order', 'App\Http\Controllers\OrderController');
 Route::resource('order.bill', 'App\Http\Controllers\OrderController')->shallow();
 Route::resource('manage', 'App\Http\Controllers\ManageController');
+Route::resource('sales', 'App\Http\Controllers\SalesController');
 
 Route::get('order/{user}/create', [OrderController::class, 'create']);

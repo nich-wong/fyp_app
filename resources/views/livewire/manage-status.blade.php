@@ -40,8 +40,8 @@
         
         <div class="col-4">Order Time:</div>
         <div class="col-8">{{$order->date_time}}</div>
-        <div class="col-4">Table No:</div>
-        <div class="col-8">{{$order->table_no}}</div>
+        {{-- <div class="col-4">Table No:</div>
+        <div class="col-8">{{$order->table_no}}</div> --}}
     </div>
 
     <div class="row mx-0 py-2 fw-semibold px-0">
